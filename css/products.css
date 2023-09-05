@@ -1,0 +1,82 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  div.product-container{
+    display: block;
+    display: block;
+    margin: auto;
+  }
+
+  article section img.car{
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  div.product-container{
+    display: grid;
+    /* grid-template-rows: 180px 180px; */
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+  }  
+
+  article section img.car{
+    width: 100%;
+  }
+}
+ 
+
+.product-container{
+  display: grid;
+  /* grid-template-rows: 180px 180px; */
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+}
+
+main{
+  width: 80%;
+  margin: auto;
+}
+.car{
+  width: 357px;
+  height: 357px;
+}
+
+/* .article{
+  background: white;
+} */
+
+.filter{
+  margin-bottom: 50px;
+}
+
+.car-text{
+  margin-top: 50px;
+  color: red;
+}
+
+.details{
+  margin-top: -50px;
+  margin-left: 0;
+  width: 135px;
+}
+
+button.seller-contact {
+  width: 135px;
+  height: auto;
+}
+
+#delete-filter{
+  background: white;
+  color: red;
+  font-style: italic;
+  border: none;
+}
+
+#find-button{
+  width: 100px;
+}
+
+select{
+  gap: 20px;
+}

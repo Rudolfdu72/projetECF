@@ -1,0 +1,52 @@
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  form#form-connexion{
+    height: auto;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  form#form-connexion{
+    height: auto;
+    width: 70%;
+    margin: auto;
+  }
+}
+
+#form-connexion{
+  width:30%;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#title{
+  text-align: center;
+}
+
+#username{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  
+  
+}
+#password{
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#send-button{
+  width: 40%;
+  height: 40px;
+  background: var(--regular-background);
+  color: var(--text-white);
+  margin-top: 10px;
+}
+

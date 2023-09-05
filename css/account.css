@@ -1,0 +1,11 @@
+.account-container{
+  width: 80%;
+  margin: auto;
+  height: 500px;
+}
+
+.account-container #title{
+
+  text-align: center;
+
+}

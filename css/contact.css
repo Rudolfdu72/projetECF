@@ -1,0 +1,83 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  form.contact-container{
+    height: auto;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    form.contact-container{
+      height: auto;
+      width: 70%;
+      margin: auto;
+    }
+  }
+
+/* Règle à revoir, probleme de poids et de spécificité */
+.contact-container{
+  height: auto;
+  width: 40%;
+  margin: auto;
+  }
+  .contact-form{
+  height: 500px;
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  background: var(--other-background);
+  
+  }
+
+  #submit-button{
+    width: 120px;
+    height: 40px;
+    background: var(--regular-background);
+    color: var(--text-white);
+    margin-top: 10px;
+  }
+
+
+  #lastname{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+   
+  }
+
+  #email{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+  }
+
+  #phonenumber{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+  }
+
+  #message{
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .input-form{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  
+
+  
