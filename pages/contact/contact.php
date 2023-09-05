@@ -17,7 +17,7 @@
     <input type="tel" id="phonenumber" placeholder="Votre numéro de téléphone" class="input-form">
   </div>
   <div>
-    <label for="">Votre message:</label>
+    <label for="">Votre message ici:</label>
     <textarea name="message" id="message" placeholder="Votre message" class="input-form"></textarea>
   </div>
   <div>
