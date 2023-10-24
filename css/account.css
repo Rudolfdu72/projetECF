@@ -1,11 +1,18 @@
-.account-container{
+div.account-container{
   width: 80%;
   margin: auto;
-  height: 500px;
+  height: 400px;
 }
 
-.account-container #title{
-
+#account_title{
+  padding-top: 100px;
   text-align: center;
+}
+
+#account_btn{
+  position: relative;
+  float: right;
+  margin-right: 20px;
 
 }
+

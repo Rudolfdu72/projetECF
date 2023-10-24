@@ -46,8 +46,9 @@
           <section>
             <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
             <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="/ecf/pages/contact/contactseller.php">
               <button class="details">détails</button>
             </a><br>
@@ -59,10 +60,11 @@
         </article>
         <article class="article">
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
+            <img src="/ecf/public/image/audicar_1280.jpg" alt="" class="car">
             <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -74,10 +76,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/audi-g300d1.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -89,10 +92,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/ferrarired.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -104,10 +108,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/merco.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -119,10 +124,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/range.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -134,10 +140,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/audicar_1280.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -149,10 +156,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/audi-g300d1.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -164,10 +172,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/mercedes.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -179,10 +188,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/mercedes-benz.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -194,10 +204,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/sportscar.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>
@@ -209,10 +220,11 @@
         </article>
         <article>
           <section>
-            <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-            <h2>Ferrari</h2>
-            <p>Prix TTC:</p>
-            <p>Mise en circulation:</p>
+            <img src="/ecf/public/image/range-rover-.jpg" alt="" class="car">
+            <h2 class="brend">Ferrari</h2>
+            <p class="price">Prix TTC:</p>
+            <p>Kilomètrage:</p>
+            <p class="year">Mise en circulation:</p>
             <a href="">
               <button class="details">détails</button>
             </a><br>

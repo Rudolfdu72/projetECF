@@ -1,3 +1,6 @@
+<?php
+  // require_once('db_connexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +15,25 @@
   <link rel="stylesheet" href="/ecf/css/products.css">
   <link rel="stylesheet" href="/ecf/css/footer.css">
   <link rel="stylesheet" href="/ecf/css/contact-seller.css">
+  <link rel="stylesheet" href="/ecf/css/employes.css">
+  <link rel="stylesheet" href="/ecf/css/service.css">
+  <link rel="stylesheet" href="/ecf/css/admin.css">
+  <link rel="stylesheet" href="/ecf/css/addservice.css">
+  <link rel="stylesheet" href="/ecf/css/addproduct.css">
+  </footer>
   <title>Document</title>
 </head>
 <body>
-<header>
-  <div class="first-header">
-  </div>
-  <nav>
-    <ul class="nav-responsive" id="responsive">
-      <div class="toggle-btn" id="btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-        <li class="hide"><a href="/ecf/index.php">Acceuil</a></li>
-        <li class="hide"><a href="/ecf/index.php#service">Nos services</a></li>
-        <li class="hide"><a href="/ecf/pages/products/products.php">Véhicules d'occasions</a></li>
-        <li class="hide"><a href="/ecf/pages/contact/contact.php">Contact</a></li>
-        <li class="hide"><a href="/ecf/pages/connexion/connexion.php">Mon compte</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="first-header">
+  </header>
+    <nav class="nav">
+      <ul class="centrer">
+          <div id="icon-burger"></div>
+          <li><a href="/ecf/index.php">Acceuil</a></li>
+          <li><a href="/ecf/index.php#service">Nos services</a></li>
+          <li><a href="/ecf/pages/products/products.php">Véhicules d'occasions</a></li>
+          <li><a href="/ecf/pages/contact/contact.php">Contact</a></li>
+          <li><a href="/ecf/pages/log/login.php">Connexion</a></li>
+      </ul>
+    </nav>
+

@@ -1,6 +1,5 @@
-const toggleButton = document.querySelector('#btn');
+const navMenu = document.querySelector('#nav');
 
-toggleButton.addEventListener('click', (e)=>{
-  e.stopImmediatePropagation();
-  alert('cliqué')
+navMenu.addEventListener('click', ()=>{
+  navMenu.classList.toggle('active');
 })

@@ -1,0 +1,17 @@
+.add-service{
+  display: flex;
+  margin: auto;
+  width: 20%;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 50px;
+  height: 500px;
+}
+
+.spaces{
+  margin-bottom: 10px;
+}
+
+.btn-space{
+  margin-top: 10px;
+}

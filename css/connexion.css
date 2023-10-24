@@ -50,3 +50,14 @@
   margin-top: 10px;
 }
 
+.role{
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding-right: 10px;
+  }
+  
+  #role-select {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+}
+
