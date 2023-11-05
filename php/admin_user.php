@@ -16,7 +16,7 @@ if(isset($_POST['Connexion'])){
                 $_SESSION["user"]["id_utilisateur"] = $user["ID_utilisateur"];
                 $_SESSION["user"]["nom_utilsateur"] = $user['nom_utilisateur'];
                 $_SESSION["user"]["prenom_utilisateur"] = $user['prenom_utilisateur'];
-                $_SESSION["user"]["role_utilisateur"] = $user['role'];
+                $_SESSION["user"]["role"] = $user['role'];
                 $_SESSION["user"]["email_utilisateur"] = $user['adresse_email'];
                 if (isAdmin($user)) {
                     header('location: /ecf/pages/account/admin.php');

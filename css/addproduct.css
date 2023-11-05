@@ -6,3 +6,67 @@
 .marge{
   margin-top: 10px;
 }
+
+.creat_product{
+  margin: auto;
+  width: 25%;
+}
+
+.table_container{
+  display: flex;
+  /* height: 300px; */
+  width: 100%;
+}
+
+#brand_title{
+  text-align: center;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.edit{
+  display: inline-block;
+  padding: 10px;
+  margin-right: 10px;
+  background: rgb(30, 228, 202);
+  color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.delete{
+  display: inline-block;
+  padding: 10px;
+  /*margin-right: 10px; */
+  background: rgb(228, 30, 30);
+  color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+table{
+  text-align: center;
+  /*border: 1px solid black; */
+  border-collapse: collapse;
+  margin: auto;
+  width: 30%;
+  align-items: center;
+}
+tr,th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 10px;
+}
+
+.car_table{
+  text-align: center;
+  /*border: 1px solid black; */
+  border-collapse: collapse;
+  margin: auto;
+  width: 50%;
+  height: 500px;
+  align-items: center;
+}

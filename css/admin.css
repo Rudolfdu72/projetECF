@@ -4,9 +4,10 @@
 
 .admin-container{
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;
  padding-top: 50px;
-  flex-direction: row-reverse;
+  flex-direction: column;
   margin: auto;
   width: 80%;
+  height: auto;
 }

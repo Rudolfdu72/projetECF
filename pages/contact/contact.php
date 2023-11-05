@@ -6,7 +6,11 @@
 <form method="POST"  class="contact-container">
   <div>
     <label for="">Votre nom:</label>
-    <input type="text" id="lastname" placeholder="Votre nom" class="input-form" name="lastname">
+    <input type="text" id="nom" placeholder="Votre nom" class="input-form" name="nom">
+  </div>
+  <div>
+    <label for="">Votre prenom:</label>
+    <input type="text" id="prenom" placeholder="Votre nom" class="input-form" name="prenom">
   </div>
   <div>
     <label for="">Votre mail:</label>
@@ -21,7 +25,7 @@
     <textarea name="message" id="message" placeholder="Votre message" class="input-form" ></textarea>
   </div>
   <div>
-    <input type="submit" value="envoyer" id="submit-button">
+    <input type="submit" value="envoyer" id="submitbutton">
   </div>
 </form>
   <?php 
