@@ -67,6 +67,19 @@ tr,th, td{
   border-collapse: collapse;
   margin: auto;
   width: 50%;
-  height: 500px;
+  height: auto;
   align-items: center;
+} 
+
+.tes_container{
+  margin: auto;
+  width: 100%;
+  align-content: center;
+}
+
+.testi_container{
+  margin: auto;
+  width: 30%;
+  height: 400px;
+  display: flex;
 }

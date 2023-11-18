@@ -1,10 +1,7 @@
 <?php
+include("../../path.php");
 require_once("../../php/functions.php");
 startSession();
-if (!isAdmin($_SESSION['user'])) {
-  header('Location: /ecf/pages/account/admin.php');
-  exit();
-}
 
 $errors = [];
 
@@ -30,47 +27,59 @@ if (isset($_POST['add-car'])) {
   if (empty($_POST['year'])) {
     $errors['year'] = 'Veuillez indiquer l n\'année du véhicule';
   }
-  if(empty($_FILES["product_image"]['name'])){
-    $errors['product_image'] =" L'image de la voiture est obligatoire";
+  if (empty($_FILES["product_image"]['name'])) {
+    $errors['product_image'] = " L'image de la voiture est obligatoire";
   }
   // if (empty($_POST['description'])) {
   //   $errors['description'] = 'Veuillez donner une description';
   // }
 
   if (count($errors) === 0) {
- 
+
     $brand = $_POST["id_marque"];
     $price = $_POST['price'];
-    $km = $_POSt['km'];
+    $km = $_POST['km'];
     $year = $_POST['year'];
     $modele = $_POST['modele'];
+    $details = $_POST['description'];
+    $image = "";
     //$description = $_POST['description'];
+    //On récupère le nom originale de l'image
     $image_name = $_FILES['product_image']['name'];
-    $destination = /ecf
+    //On spécifie le dossier de destination du stockage des image
+    $destination = ROOT_PATH . "/public/images/" . $image_name;
+    //On récupère le stockage temporaire de l'image
+    $tmp_name = $_FILES["product_image"]["tmp_name"];
+    //On déplace l'image du dossier temporaire vers le dossier de destination
+    $result = move_uploaded_file($tmp_name, $destination);
+    if ($result) {
+      $image = $image_name;
 
+      $pdo = getPdo();
+      // Insertion des données dans la table marque
+      $req = "INSERT INTO car(id_marque, modele, annee, prix, photo, km, details) VALUES ( :idMarque, :modele, :annee, :prix, :photo, :km, :details)";
 
+      $statement = $pdo->prepare($req);
+      $statement->execute([
+        "idMarque" => $brand,
+        "modele" => $modele,
+        "prix" => $price,
+        "annee" => $year,
+        "photo" => $image,
+        "km" => $km,
+        "details" => $details
+      ]);
 
-    $pdo = getPdo();
-    // Insertion des données dans la table marque
-    $marque = "INSERT INTO marque (name, description) VALUES ( :name, :description)";
-    $statement = $pdo->prepare($marque);
-    $statement->bindValue(':name', $_POST['brand'], PDO::PARAM_STR);
-    $statement->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
-    $statement->execute();
-    // Insertion des données dans la table car
-    $requete = "INSERT INTO car( modele, annee, prix, photo) VALUES (:modele, :annee, :prix, :photo)";
-    $statement = $pdo->prepare($requete);
-    $statement->bindValue(':modele', $_POST['modele'], PDO::PARAM_STR);
-    $statement->bindValue(':annee', $_POST['year'], PDO::PARAM_STR);
-    $statement->bindValue(':prix', $_POST['price'], PDO::PARAM_STR);
-    $statement->bindValue(':photo', $_POST['product_image'], PDO::PARAM_STR);
-    $statement->execute();
+      $_SESSION['success'] = 'Les infos sont soumises avec suces';
+      header('Location: ' . BASE_URL . '/pages/products/index.php');
+      exit();
 
-    $_SESSION['success_car'] = 'Les infos sont soumises avec suces';
-    header('Location: /ecf/pages/account/admin.php');
-    exit();
+    } else {
+      $errors["product_name"] = "Une erreur lors du chargement de l'image";
+
+    }
   }
-} 
+}
 ?>
 
 <?php
@@ -104,8 +113,10 @@ include "../../components/header.php";
     Marque: <br>
     <select name="id_marque" id="">
       <option value="">--Selectionnez une marque--</option>
-      <?php foreach( $brands as $brand ): ?>
-        <option value="<?= $brand['id_marque'] ?>"><?= $brand['name'] ?></option>
+      <?php foreach ($brands as $brand): ?>
+        <option value="<?= $brand['id_marque'] ?>">
+          <?= $brand['name'] ?>
+        </option>
       <?php endforeach; ?>
     </select>
     <?php if (isset($errors['id_marque'])): ?>
@@ -184,3 +195,5 @@ include "../../components/header.php";
   </div>
   </div>
 </form>
+
+<?php

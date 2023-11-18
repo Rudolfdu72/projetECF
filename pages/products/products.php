@@ -1,5 +1,14 @@
 <?php
 include "../../components/header.php";
+include_once("../../php/functions.php");
+include_once("../../path.php");
+startSession();
+// Selection et affichage des produits
+$pdo = getPdo();
+//$req = $pdo->prepare("SELECT * FROM car");
+$req = $pdo->prepare("SELECT * FROM car INNER JOIN marque ON car.id_marque= marque.id_marque");
+$req->execute();
+$cars = $req->fetchAll();
 ?>
 <main>
   <p class="car-text">Consulter notre catalogue, jusqu'à 1500 véhicule disponible</p>
@@ -41,13 +50,14 @@ include "../../components/header.php";
     <button id="find-button">Trouver</button>
   </div>
   <div class="product-container">
+    <?php foreach ($cars as $car): ?>
     <article>
       <section>
-        <img src="/ecf/public/image/lamborghini.jpg" alt="" class="car">
-        <h2>Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
+        <img src="<?= BASE_URL.'/public/images/'.$car['photo']?>" alt="" class="car">
+        <h2><?= $car['name'] ?></h2>
+        <p class="price">Prix TTC: <?= $car['prix'] ?>€</p>
+        <p>Kilométrage: <?= $car['km'] ?></p>
+        <p class="annee">Année: <?= $car['annee'] ?></p>
         <a href="/ecf/pages/contact/contact.php">
           <button class="details">détails</button>
         </a><br>
@@ -57,182 +67,7 @@ include "../../components/header.php";
         </a>
       </section>
     </article>
-    <article class="article">
-      <section>
-        <img src="/ecf/public/image/audicar_1280.jpg" alt="" class="car">
-        <h2>Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/audi-g300d1.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/ferrarired.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/merco.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/range.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/audicar_1280.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-        < </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/audi-g300d1.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/mercedes.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/mercedes-benz.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/sportscar.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
-    <article>
-      <section>
-        <img src="/ecf/public/image/range-rover-.jpg" alt="" class="car">
-        <h2 class="brend">Ferrari</h2>
-        <p class="price">Prix TTC:</p>
-        <p>Kilomètrage:</p>
-        <p class="year">Mise en circulation:</p>
-        <a href="">
-          <button class="details">détails</button>
-        </a><br>
-        <br>
-        <a href="/ecf/pages/contact/contact.php">
-          <button class="seller-contact">Contact</button>
-        </a>
-      </section>
-    </article>
+    <?php endforeach; ?>
   </div>
 </main>
 <?php

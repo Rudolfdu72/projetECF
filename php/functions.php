@@ -1,5 +1,5 @@
 <?php
-require_once "../../config.php";
+require_once ROOT_PATH."/config.php";
 function isAdmin($user){
   if (!empty($user)) {
     $middlware = false;

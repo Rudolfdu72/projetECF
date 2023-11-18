@@ -42,6 +42,8 @@ CREATE TABLE
         annee INT NOT NULL,
         prix DECIMAL(10, 2) NOT NULL,
         photo VARCHAR(255),
+        km VARCHAR(255),
+        details TEXT DEFAULT(NULL),
         FOREIGN KEY (id_marque) REFERENCES marque(id_marque)
     );
 
