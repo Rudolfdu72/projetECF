@@ -1,5 +1,6 @@
 <?php
 require_once ROOT_PATH."/config.php";
+
 function isAdmin($user){
   if (!empty($user)) {
     $middlware = false;
@@ -26,9 +27,9 @@ function getPdo(){
     }
 }
 
-function userExist($username, PDO $pdo){
-  $result = $pdo->prepare("SELECT * FROM users WHERE nom_utilisateur= ?");
-  $result->execute([$username]);
+function userExist($email, PDO $pdo){
+  $result = $pdo->prepare("SELECT * FROM users WHERE adresse_email= ?");
+  $result->execute([$email]);
 
   if($result->rowCount() > 0){
     return $result->fetch();
@@ -50,7 +51,7 @@ function logout(){
     unset($_SESSION['user']);
     $_SESSION['success'] = "Vous êtes déconnecté avec sucèss";
     //session_destroy();
-    header('location:/ecf/pages/log/login.php');
+    header('location:'.BASE_URL.'/pages/log/login.php');
   }
 }
 

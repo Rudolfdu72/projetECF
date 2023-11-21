@@ -1,6 +1,6 @@
 <?php
-include_once("../../php/functions.php");
-include_once("../../path.php");
+include_once("../path.php");
+include_once(ROOT_PATH."/php/functions.php");
 startSession();
 // On envoie l'identifiant par l'url donc on utilise la méthode GET
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
@@ -15,3 +15,4 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
   header('Location: '.BASE_URL.'/pages/products/index.php');
   exit();
 }
+?>

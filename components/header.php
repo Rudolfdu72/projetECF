@@ -33,7 +33,12 @@
           <li><a href="/ecf/index.php#service">Nos services</a></li>
           <li><a href="/ecf/pages/products/products.php">Véhicules d'occasions</a></li>
           <li><a href="/ecf/pages/contact/contact.php">Contact</a></li>
-          <li><a href="/ecf/pages/log/login.php">Connexion</a></li>
+          <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['email_utilisateur'])): ?>
+            <li><a href="<?= BASE_URL.'/pages/account/admin.php'?>">Tableau de bord</a></li>
+            <li><?= $_SESSION['user']['nom_utilisateur'].' '. $_SESSION['user']['prenom_utilisateur'] ?></li>
+            <?php else : ?>
+              <li><a href="<?= BASE_URL. '/pages/log/login.php' ?>">Connexion</a></li>
+          <?php endif; ?>
       </ul>
     </nav>
 

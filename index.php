@@ -41,7 +41,6 @@ include "components/header.php";
       <?php foreach( $services as $service ): ?>
         
         <?php if( $service['category_id'] == $category['id_category'] ): ?>
-          <p><?= $service['name'] ?></p>
         <?php endif; ?>
       <?php endforeach; ?>
       

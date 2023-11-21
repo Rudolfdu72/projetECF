@@ -1,6 +1,8 @@
 <?php
+
   session_start();
-  require_once "../../php/functions.php";
+  include_once("../../path.php");
+  require_once ROOT_PATH."/php/functions.php";
   
   logout();
 ?>

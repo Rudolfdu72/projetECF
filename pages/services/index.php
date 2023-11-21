@@ -50,7 +50,8 @@ include "../../components/header.php";
     
           <td>
           <span class="edit"><a href="<?= BASE_URL ?>/pages/services/edit.php?id=<?= $service['serviceId'] ?>">Modifier</a></span>
-            <span class="delete"><a href="<?= BASE_URL ?>/pages/services/delete.php?id=<?= $service['serviceId'] ?>">Supprimer</a></span>
+            <span onclick="confirm('Voulez-vous vraiment supprimer ce service ?')" class="delete"><a href="<?= BASE_URL ?>/pages/services/delete.php?id=<?= $service['serviceId'] ?>">Supprimer</a></span>
+
           </td>
         </tr>
       <?php endforeach; ?>

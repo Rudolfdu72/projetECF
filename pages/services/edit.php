@@ -35,7 +35,7 @@ if (isset($_GET["id"])) {
       $name = $_POST['name'];
 
       // Insertion des données dans la table marque
-      $req = "UPDATE service SET category_id=?, name=? WHERE id_service=?";
+      $req = "UPDATE service SET category_id=?, name=? WHERE id_SERVICE=?";
 
       $statement = $pdo->prepare($req);
       $statement->execute([
@@ -61,7 +61,7 @@ if (isset($_GET["id"])) {
     </a>
 
   </div>
-  <form method="post" action="edit.php" class="creat_product"><br>
+  <form method="post" action="" class="creat_product"><br>
 
     <h1>Modifier le service</h1>
     <div>

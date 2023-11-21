@@ -1,9 +1,13 @@
 <?php
 include("../../path.php");
-require_once("../../php/functions.php");
+require_once(ROOT_PATH."/php/functions.php");
 startSession();
-
 $errors = [];
+
+$pdo = getPdo();
+$req = $pdo->prepare("SELECT * FROM marque");
+$req->execute();
+$brands = $req->fetchAll();
 
 if (isset($_POST['add-car'])) {
 
@@ -80,14 +84,6 @@ if (isset($_POST['add-car'])) {
     }
   }
 }
-?>
-
-<?php
-
-$pdo = getPdo();
-$req = $pdo->prepare("SELECT * FROM marque");
-$req->execute();
-$brands = $req->fetchAll();
 
 include "../../components/header.php";
 

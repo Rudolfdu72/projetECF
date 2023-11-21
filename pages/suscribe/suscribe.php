@@ -1,8 +1,15 @@
 <?php
-require_once "../../config.php";
-require_once '../../php/functions.php';
+require_once "../../path.php";
+require_once ROOT_PATH . "/config.php";
+require_once ROOT_PATH . '/php/functions.php';
+startSession();
+if (!isAdmin($_SESSION['user'])) {
+  $_SESSION['error'] = 'Vous n\'êtes authorisé à effectuer cette action';
+  header("Location: " . BASE_URL . "/pages/account/admin.php");
+  exit();
+}
 
-include "../../components/header.php";
+include ROOT_PATH . "/components/header.php";
 if (isset($_POST['suscribe'])) {
 
   if (
@@ -40,17 +47,20 @@ if (isset($_POST['suscribe'])) {
       $erreur = 'vos mots de passe ne sont pas identiques';
     }
 
-    $pdo = getPdo();
+    if ($erreur == '' || empty($erreur)) {
+      $pdo = getPdo();
 
-    // Requête préparée pour l'insertion dans la table "utilisateurs"
-    $sqlUser = "INSERT INTO users (nom_utilisateur, prenom_utilisateur, role, adresse_email, mot_de_passe) VALUES (:nom, :prenom, :role, :email, :pass_word)";
-    $statement = $pdo->prepare($sqlUser);
-    $statement->bindValue(':nom', $_POST['firstname'], PDO::PARAM_STR);
-    $statement->bindValue(':prenom', $_POST['lastname'], PDO::PARAM_STR);
-    $statement->bindValue(':role', $_POST['role'], PDO::PARAM_STR);
-    $statement->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-    $statement->bindValue(':pass_word', password_hash($_POST['password'], PASSWORD_BCRYPT), PDO::PARAM_STR);
-    $statement->execute();
+      // Requête préparée pour l'insertion dans la table "utilisateurs"
+      $sqlUser = "INSERT INTO users (nom_utilisateur, prenom_utilisateur, role, adresse_email, mot_de_passe) VALUES (:nom, :prenom, :role, :email, :pass_word)";
+      $statement = $pdo->prepare($sqlUser);
+      $statement->bindValue(':nom', $_POST['firstname'], PDO::PARAM_STR);
+      $statement->bindValue(':prenom', $_POST['lastname'], PDO::PARAM_STR);
+      $statement->bindValue(':role', $_POST['role'], PDO::PARAM_STR);
+      $statement->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+      $statement->bindValue(':pass_word', password_hash($_POST['password'], PASSWORD_BCRYPT), PDO::PARAM_STR);
+      $statement->execute();
+    }
+
   } else {
     $erreur = 'Tous les champs doivent etre complétés';
   }
@@ -83,22 +93,22 @@ if (isset($_POST['suscribe'])) {
     <label>Mail de confirmation:</label>
     <input type="email" name="email_confirm" id="email_confirm" class="input_size">
   </div>
-    <div>
-      <label>Mot de passe:</label>
-      <input type="password" name="password" id="password" class="input_size">
-    </div>
-    <div>
-      <label>confirmation de mot de passe:</label>
-      <input type="password" name="password_confirm" id="password_confirm" class="input_size">
-    </div>
-    <div>
-      <button id="suscribe" name="suscribe">S'inscrire</button>
-    </div>
-    <?php
-    if (isset($erreur)) {
-      echo '<font color ="red">' . $erreur . "</font>";
-    }
-    ?>
+  <div>
+    <label>Mot de passe:</label>
+    <input type="password" name="password" id="password" class="input_size">
+  </div>
+  <div>
+    <label>confirmation de mot de passe:</label>
+    <input type="password" name="password_confirm" id="password_confirm" class="input_size">
+  </div>
+  <div>
+    <button id="suscribe" name="suscribe">S'inscrire</button>
+  </div>
+  <?php
+  if (isset($erreur)) {
+    echo '<font color ="red">' . $erreur . "</font>";
+  }
+  ?>
 </form>
 
 <?php

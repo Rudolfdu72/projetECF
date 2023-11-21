@@ -1,4 +1,5 @@
 <?php
+require_once ROOT_PATH."/config.php";
 include_once("../../php/functions.php");
 startSession();
 

@@ -1,8 +1,9 @@
 <?php
-include "../../components/header.php";
-include_once("../../php/functions.php");
+
 include_once("../../path.php");
+include_once(ROOT_PATH."/php/functions.php");
 startSession();
+include ROOT_PATH."/components/header.php";
 // Selection et affichage des produits
 $pdo = getPdo();
 //$req = $pdo->prepare("SELECT * FROM car");

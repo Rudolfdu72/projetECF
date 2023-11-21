@@ -1,6 +1,6 @@
 <?php
 include("../../path.php");
-require_once("../../php/functions.php");
+require_once("ecf/php/functions.php");
 startSession();
 
 $errors = [];

@@ -1,6 +1,6 @@
 <?php
-include_once("../../php/functions.php");
-include_once("../../path.php");
+include("../../path.php");
+require_once(ROOT_PATH."/php/functions.php");
 startSession();
 
 // Selection et affichage des produits
@@ -56,7 +56,9 @@ include "../../components/header.php";
           alt=""></td>
           <td>
             <span class="edit"><a href="<?= BASE_URL ?>/pages/products/edit.php?id=<?= $car['id_voiture'] ?>">Modifier</a></span>
-            <span class="delete"><a href="<?= BASE_URL ?>/pages/products/delete.php?id=<?= $car['id_voiture'] ?>">Supprimer</a></span>
+            <span onclick="confirm('ëtes-vous sûr de vouloir supprimer le produit ?')" class="delete">
+            <a href="<?= BASE_URL ?>/pages/products/delete.php?id=<?= $car['id_voiture'] ?>">Supprimer</a>
+          </span>
           </td>
         </tr>
       <?php endforeach; ?>
